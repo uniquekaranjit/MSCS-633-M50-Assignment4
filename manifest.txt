@@ -1,0 +1,14 @@
+Project: Fraud Detection using PyOD AutoEncoder
+Student: <Your Name>
+Course: <Course Name / Number>
+Date: <Submission Date>
+
+Contents:
+1. src/fraud_autoencoder.py
+   - Main Python source code for training and evaluating the AutoEncoder model.
+2. data/creditcard.csv
+   - Anonymized credit card transaction dataset downloaded from Kaggle.
+3. requirements.txt
+   - Python dependencies required to run the project.
+4. manifest.txt
+   - This manifest file describing the project contents.
