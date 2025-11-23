@@ -10,7 +10,7 @@ Usage:
 or:
     python src/fraud_autoencoder.py
 
-Author: <Your Name>
+Author: Unique Karanjit
 """
 
 import os
@@ -104,11 +104,18 @@ def train_autoencoder(X_train: np.ndarray) -> AutoEncoder:
     """
     # AutoEncoder hyperparameters can be tuned. Here we use a simple configuration.
     model = AutoEncoder(
-        hidden_neurons=[32, 16, 16, 32],
-        epochs=20,
+        contamination=0.001,          # good for credit card fraud dataset
+        preprocessing=True,
+        lr=0.001,
+        epoch_num=20,                 # replaces epochs
         batch_size=256,
-        contamination=0.001,  # roughly % of outliers in data (Kaggle dataset has ~0.17% fraud)
+        optimizer_name='adam',
+        random_state=42,
         verbose=1,
+        hidden_neuron_list=[32, 16],  # bottleneck architecture
+        hidden_activation_name='relu',
+        batch_norm=True,
+        dropout_rate=0.1
     )
 
     model.fit(X_train)
